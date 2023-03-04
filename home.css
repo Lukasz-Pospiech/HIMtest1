@@ -1,0 +1,230 @@
+* {
+    box-sizing: border-box;
+    border: none;
+    scrollbar-width: none; 
+    -ms-overflow-style: none;
+  }
+  
+  :root {
+    --vh: 1vh;
+  }
+  
+  ::-webkit-scrollbar {
+    display: none;
+  }
+
+  /* .opacityZero {
+    opacity: 0;
+  }
+
+  .opacityOne {
+    opacity: 1;
+  } */
+  
+  body {
+    position: fixed;
+    background-color: black;
+    width: 100vw;
+    max-width: 100vw;
+    overflow-x: hidden;
+    padding: 0;
+    margin: 0;
+
+    -webkit-tap-highlight-color: transparent;
+  }
+  
+ #container {
+    position: absolute;
+    width: 100vw;
+    max-width: 100vw;
+    overflow-x: hidden;
+    top: 0;
+    left: 0;
+    padding: 0;
+    min-height: calc(var(--vh, 1vh) * 100);;
+    background-image: url('photoCover.jpg');
+    background-repeat: no-repeat;
+    background-size: cover;
+    /* text-shadow: 1px 1px black; */
+    z-index: 1;
+    background-color: rgb(11, 55, 51);
+    animation: incrOpacityContainerAnim 0.3s ease-in 1 forwards;
+   
+  }
+  
+  @keyframes incrOpacityContainerAnim {
+    from {
+      opacity: 0;
+    }
+    to {
+      opacity: 1;
+    }
+  }
+  
+
+ #navDiv {
+    width: 100vw;
+    max-width: 100vw;
+    height: calc(var(--vh, 1vh) * 9);
+    position: fixed;
+    padding: 0;
+    /* background-color: rgb(24, 63, 119); */
+    /* background-image: linear-gradient(rgb(29, 74, 173, 0.7), rgb(19, 117, 198)); */
+    z-index: 120;
+    background-image: linear-gradient(to right, rgba(255, 255, 255, 0.1),   rgb(0, 90, 125, 1));
+  }
+
+
+  /* .navElements {
+    height: calc(var(--vh, 1vh) * 7);
+    max-height: calc(var(--vh, 1vh) * 7);
+  }
+   */
+
+
+
+  #containerHamburger {
+    width: 45px;
+    height: calc(var(--vh, 1vh) * 7);
+    display: block;
+    position: absolute;
+    right: 2vw;
+    top: 0;
+  }
+
+  
+  .bar1, .bar2, .bar3 {
+    width: 45px;
+    height: 7.86px; /* proportional to 55px width */
+    background-color: rgb(255, 255, 255);
+    margin: 9.29px 0; /* proportional to 55px width */
+    transition: 0.4s;
+  }
+  
+  .change .bar1 {
+    transform: translate(0, 17.36px) rotate(-45deg); /* proportional to 55px width */
+  }
+  
+  .change .bar2 {
+    opacity: 0;
+  }
+  
+  .change .bar3 {
+    transform: translate(0, -17.36px) rotate(45deg); /* proportional to 55px width */
+  }
+
+
+  
+
+/* MENU */
+
+#menuDiv {
+  display: grid;
+  position: fixed;
+  grid-template-rows: 1fr 1fr 1fr 1fr 1fr; 
+  width: 50vw;
+  height: calc(var(--vh, 1vh) * 40);
+  top:  calc(var(--vh, 1vh) * 9);
+  right: 0;
+  justify-content: right;
+  align-content: center;
+  justify-items: right;
+  align-items: center;
+  z-index: 101;
+  transition: opacity 0.4s;
+  /* background-image: linear-gradient(to bottom,whitesmoke, gray); */
+}
+
+
+
+.menuItems {
+  justify-self: end;
+  display: flex;
+  align-items: center;
+  justify-content: right;
+  width: 50vw;
+  height: calc(var(--vh, 1vh) * 9);
+  letter-spacing: 0.5vw;
+  font-size: calc(var(--vh, 1vh) * 4);
+  color: rgb(255, 255, 255);
+  /* -webkit-text-fill-color: white; 
+  -webkit-text-stroke-width: 1px;
+  -webkit-text-stroke-color: black;
+  text-shadow: 3px 3px black; */
+  padding-right: 4vw;
+  font-family: 'News Cycle', 'Source Sans Pro', 'Arial';
+  /* background-color: rgb(39, 114, 152);
+  border: 2px solid red; */
+  margin-left: auto;
+  /* background-image: linear-gradient(to right, rgba(255, 255, 255, 0.4),  rgb(255, 255, 255, 1)); */
+  background-image: linear-gradient(to right, rgba(255, 255, 255, 0.1),  rgb(0, 90, 125));
+  transform: rotateX(90deg);
+  transform-origin: center top;
+  /* border: 1px solid orange; */
+  margin-top: calc(var(--vh, 1vh) * 1);
+}
+
+a {
+  text-decoration: none;
+}
+
+/* #HOME {
+  width: 50vw;
+}
+
+#HIMARA {
+  width: 50vw;
+}
+
+#REVIEWS {
+  width: 50vw;
+}
+
+#CONTACT {
+  width: 50vw;
+} */
+
+
+.openMenu {
+  animation: openMenuAnim 0.5s ease-in-out 1 forwards;
+}
+
+@keyframes openMenuAnim {
+  0% {
+    transform: rotateX(90deg);
+  }
+  100% {
+    transform: rotateX(0deg);
+  }
+}
+
+.closeMenu {
+  animation: closeMenuAnim 0.3s ease-in 1 forwards;
+}
+
+@keyframes closeMenuAnim {
+  0% {
+    transform: rotateX(0deg);
+  }
+  100% {
+    transform: rotateX(90deg);
+  }
+}
+
+
+
+
+
+  #socialBar {
+    width: 100vw;
+    max-width: 100vw;
+    height: calc(var(--vh, 1vh) * 9);
+    position: fixed;
+    padding: 0;
+    /* background-color: rgb(24, 63, 119); */
+    /* background-image: linear-gradient(rgb(29, 74, 173, 0.7), rgb(0, 0, 0)); */
+    z-index: 20;
+    top: calc(var(--vh, 1vh) * 91);
+  }
+
+
